@@ -59,6 +59,8 @@ function enzyme_testsuite(backend, ArrayT, supports_reverse=true)
     end
 end
 
+@assert CUDA.functional()
+@assert CUDA.has_cuda_gpu()
 # enzyme_testsuite(CPU, Array, true)
 # enzyme_testsuite(CUDABackend, CuArray, false)
 enzyme_testsuite(CUDABackend, CuArray, true)
